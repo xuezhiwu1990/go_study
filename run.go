@@ -1,3 +1,8 @@
+/**
+ * go study
+ * zhangyu 2018-06-04
+ * Go 脚本模拟访问Nginx日志程序
+ */
 package main
 
 import (
@@ -68,14 +73,12 @@ func makelog( current , refer , ua  string) string {
  paramsStr := u.Encode()
 
  logTemplate := "192.168.47.1 - - [03/Jun/2018:12:21:01 +0800] 'OPTIONS /dig?{$paramsStr}' '{$ua}' '-'";
- //logTemplate := "{$paramsStr}{$ua}";
  log := strings.Replace(logTemplate , "{$paramsStr}",paramsStr,-1)
  log = strings.Replace(log , "{$ua}",ua,-1)
  return log
 }
 
 func randInt(min ,max int) int {
-	fmt.Println(min,max)
 	r := rand.New( rand.NewSource(time.Now().UnixNano() ))
 	if min > max {
 		return max
@@ -91,7 +94,6 @@ func main () {
   //需要构造出真实的url集合
   res := ruleResource()
   list := buildUrl( res )
-  fmt.Println(list)
 
   //按照要求,生成$total 行日志内容
 	logStr := ""
