@@ -1,7 +1,9 @@
 /**
+ * -----------------------------
  * go study
  * zhangyu 2018-06-04
  * Go 脚本模拟访问Nginx日志程序
+ * ------------------------------
  */
 package main
 
@@ -9,11 +11,11 @@ import (
         "fmt"
         "strings"
         "strconv"
-		"flag"
-		"net/url"
-		"math/rand"
-		"time"
-		"os"
+    		"flag"
+    		"net/url"
+    		"math/rand"
+    		"time"
+    		"os"
 )
 
 type resource struct {
@@ -88,7 +90,7 @@ func randInt(min ,max int) int {
 
 func main () {
   total := flag.Int( "total" , 100 ,"how many")
-  filePath := flag.String("filePath","D:\\Go_WorkSpace\\dig_go.log" ,"D:\\Go_WorkSpace\\dig_go.log")
+  filePath := flag.String("filePath","D:\\awesomeProject1\\run\\dig_go.log" ,"D:\\awesomeProject1\\run\\dig_go.log")
   flag.Parse()
 
   //需要构造出真实的url集合
